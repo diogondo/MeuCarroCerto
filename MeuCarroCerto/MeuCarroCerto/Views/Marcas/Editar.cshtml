@@ -1,0 +1,35 @@
+﻿@model MeuCarroCerto.Models.t_marcas
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Marcas</h2>
+
+@using (Html.BeginForm("Editar", "Marcas", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Marcas</legend>
+
+        @Html.HiddenFor(model => model.codigo)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <p>
+            <input type="submit" class="btn btn-primary" value="Gravar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>

@@ -6,10 +6,13 @@ using System.Web.Mvc;
 
 namespace MeuCarroCerto.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        //
-        // GET: /Home/
+        public ActionResult Login()
+        {
+            ViewBag.Title = "Seja bem-vindo(a)";
+            return View();
+        }
 
         public ActionResult Index()
         {

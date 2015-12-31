@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Consultas Gerais - @ViewBag.Title</title>
+    <title>Meu Carro Certo - @ViewBag.Title</title>
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
     
     <style>
@@ -26,8 +26,17 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                                                
+                        @{
                         
+                            var usuario = HttpContext.Current.Request.Cookies["UserCookieAuthentication"];
+                            if (usuario != null)
+                            {
+                                <li id="menuHome">@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li id="menuMarcas">@Html.ActionLink("Marcas", "Index", "Marcas")</li>
+                            }
+                        }   
+                        <li id="menuHome">@Html.ActionLink("Começar", "Index", "Home")</li>                     
                     </ul>
                 </div>
             </div>
