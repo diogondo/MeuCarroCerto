@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meu Carro Certo - @ViewBag.Title</title>
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet">
-    
     <style>
         body {
             padding-top: 20px;
@@ -26,23 +25,26 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                                                
+
+                        <li id="menuHome">@Html.ActionLink("Home", "Index", "Home")</li>
+
                         @{
-                        
+
                             var usuario = HttpContext.Current.Request.Cookies["UserCookieAuthentication"];
                             if (usuario != null)
                             {
-                                <li id="menuHome">@Html.ActionLink("Home", "Index", "Home")</li>
                                 <li id="menuMarcas">@Html.ActionLink("Marcas", "Index", "Marcas")</li>
                             }
-                        }   
-                        <li id="menuHome">@Html.ActionLink("Começar", "Index", "Home")</li>                     
+                        }
+
+                        <li id="menuFiltros">@Html.ActionLink("Começar", "Index", "Filtros/Index")</li>
+
                     </ul>
                 </div>
             </div>
         </nav>
         @RenderBody()
-    </div>
+        </div>
     <script src="@Url.Content("~/Scripts/jquery-2.1.4.min.js")"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
     @RenderSection("Scripts", required: false)

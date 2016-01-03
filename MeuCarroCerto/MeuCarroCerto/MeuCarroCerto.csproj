@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseControllerController.cs" />
+    <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Views\Marcas\Adicionar.cshtml" />
     <Content Include="Views\Marcas\Editar.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Filtros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
