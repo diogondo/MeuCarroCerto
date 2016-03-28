@@ -1,0 +1,36 @@
+﻿@model MeuCarroCerto.Models.t_carros_teste
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>t_carros_teste</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codigo_marcas)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigo_marcas)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MeuCarroCertoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="t_marcas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t_carros_teste" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste" FromRole="t_marcas" ToRole="t_carros_teste" />
+  </EntityType>
+  <EntityType Name="t_usuarios">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int64" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="EntidadesMeuCarroCertoDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_marcas" EntityType="Self.t_marcas" />
+    <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" />
+    <EntitySet Name="t_carrocerias" EntityType="MeuCarroCertoDBModel.t_carrocerias" />
+    <EntitySet Name="t_criterios" EntityType="MeuCarroCertoDBModel.t_criterios" />
+    <EntitySet Name="t_alternativas" EntityType="MeuCarroCertoDBModel.t_alternativas" />
+    <EntitySet Name="t_cores" EntityType="MeuCarroCertoDBModel.t_cores" />
+    <EntitySet Name="t_carros_teste" EntityType="MeuCarroCertoDBModel.t_carros_teste" />
+    <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste">
+      <End Role="t_marcas" EntitySet="t_marcas" />
+      <End Role="t_carros_teste" EntitySet="t_carros_teste" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="t_carrocerias">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="t_criterios">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="t_alternativas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="codigo_criterio" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_cores">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="t_carros_teste">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigo_marcas" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t_marcas" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste" FromRole="t_carros_teste" ToRole="t_marcas" />
+  </EntityType>
+  <Association Name="FK_t_marcas_t_carros_teste">
+    <End Type="MeuCarroCertoDBModel.t_marcas" Role="t_marcas" Multiplicity="1" />
+    <End Type="MeuCarroCertoDBModel.t_carros_teste" Role="t_carros_teste" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_marcas">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="t_carros_teste">
+        <PropertyRef Name="codigo_marcas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

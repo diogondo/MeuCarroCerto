@@ -1,0 +1,41 @@
+﻿@model MeuCarroCerto.Models.t_cores
+
+@{
+    ViewBag.Title = "Adicionar";
+    Layout = "~/Views/Layout.cshtml";
+}
+
+<h2>Adicionar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cores</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.codigo)
+            @Html.ValidationMessageFor(model => model.codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome)
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

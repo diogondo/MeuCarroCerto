@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MeuCarroCerto.Models.t_carrocerias>
+
+@{
+    ViewBag.Title = "Index";
+}
+@{
+    Layout = null;
+}
+
+<h2>Carrocerias</h2>
+<p>
+    @Html.ActionLink("Adicionar Carroceria", "Adicionar", null, new { @class = "btn btn-primary" })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.codigo })
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.codigo }, new { @class = "excluir" })
+            </td>
+        </tr>
+    }
+</table>

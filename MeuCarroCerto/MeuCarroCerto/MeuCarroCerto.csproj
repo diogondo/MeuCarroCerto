@@ -116,15 +116,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdministrarController.cs" />
     <Compile Include="Controllers\BaseControllerController.cs" />
+    <Compile Include="Controllers\CarroceriasController.cs" />
+    <Compile Include="Controllers\CarroTesteController.cs" />
+    <Compile Include="Controllers\CoresController.cs" />
+    <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\UsuariosCrudController.cs" />
     <Compile Include="Filtros\AutorizacaoDeAcesso.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auxiliar.cs" />
     <Compile Include="Models\MarcasMetadado.cs" />
     <Compile Include="Models\ModeloDeDados.Context.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +147,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDeDados.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_alternativas.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_carrocerias.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_carros_teste.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_cores.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_criterios.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_marcas.cs">
       <DependentUpon>ModeloDeDados.tt</DependentUpon>
@@ -206,6 +228,22 @@
     <Content Include="Views\Marcas\Editar.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Filtros\Index.cshtml" />
+    <Content Include="Views\UsuariosCrud\Index.cshtml" />
+    <Content Include="Views\UsuariosCrud\Adicionar.cshtml" />
+    <Content Include="Views\UsuariosCrud\Editar.cshtml" />
+    <Content Include="Views\Carrocerias\Index.cshtml" />
+    <Content Include="Views\Carrocerias\Adicionar.cshtml" />
+    <Content Include="Views\Carrocerias\Editar.cshtml" />
+    <Content Include="Views\Criterios\Index.cshtml" />
+    <Content Include="Views\Criterios\Adicionar.cshtml" />
+    <Content Include="Views\Criterios\Editar.cshtml" />
+    <Content Include="Views\Cores\Adicionar.cshtml" />
+    <Content Include="Views\Cores\Editar.cshtml" />
+    <Content Include="Views\Cores\Index.cshtml" />
+    <Content Include="Views\CarroTeste\Index.cshtml" />
+    <Content Include="Views\CarroTeste\Details.cshtml" />
+    <Content Include="Views\CarroTeste\Create.cshtml" />
+    <Content Include="Views\Administrar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

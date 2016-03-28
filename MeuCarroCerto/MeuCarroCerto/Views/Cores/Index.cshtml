@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MeuCarroCerto.Models.t_cores>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout.cshtml";
+}
+@{
+    Layout = null;
+}
+<h2>Cores</h2>
+
+<p>
+    @Html.ActionLink("Adicionar cores", "Adicionar", null, new { @class = "btn btn-primary" })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id = item.codigo }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

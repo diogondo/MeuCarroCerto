@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MeuCarroCertoDBModelStoreContainer" CdmEntityContainer="EntidadesMeuCarroCertoDB">
+    <EntitySetMapping Name="t_marcas">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_marcas">
+        <MappingFragment StoreEntitySet="t_marcas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_usuarios">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_usuarios">
+        <MappingFragment StoreEntitySet="t_usuarios">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_carrocerias">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carrocerias">
+        <MappingFragment StoreEntitySet="t_carrocerias">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_criterios">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_criterios">
+        <MappingFragment StoreEntitySet="t_criterios">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_alternativas">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_alternativas">
+        <MappingFragment StoreEntitySet="t_alternativas">
+          <ScalarProperty Name="codigo_criterio" ColumnName="codigo_criterio" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_cores">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_cores">
+        <MappingFragment StoreEntitySet="t_cores">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_carros_teste">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros_teste">
+        <MappingFragment StoreEntitySet="t_carros_teste">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo_marcas" ColumnName="codigo_marcas" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
