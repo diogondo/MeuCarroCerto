@@ -21,7 +21,9 @@ using System.Data.Entity.Infrastructure;
 public partial class EntidadesMeuCarroCertoDB : DbContext
 {
     public EntidadesMeuCarroCertoDB()
-        : base("name=EntidadesMeuCarroCertoDB")
+        //: base("name=EntidadesMeuCarroCertoDB")
+        : base("name=db2c210cb9d468430aa757a57f01269a9d")
+        
     {
 
     }
