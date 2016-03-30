@@ -31,9 +31,9 @@ namespace MeuCarroCerto.Controllers
             {
                 db.t_marcas.Add(marcas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(marcas);
+            return RedirectToAction("Index", "Administrar");
         }
 
         public ActionResult Editar(int id)
@@ -49,24 +49,23 @@ namespace MeuCarroCerto.Controllers
             {
                 db.Entry(marcas).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(marcas);
+            return RedirectToAction("Index", "Administrar");
         }
 
-        [HttpPost]
-        public string Excluir(int id)
+        public ActionResult Excluir(int id)
         {
             try
             {
-                t_marcas cidades = db.t_marcas.Find(id);
-                db.t_marcas.Remove(cidades);
+                t_marcas marcas = db.t_marcas.Find(id);
+                db.t_marcas.Remove(marcas);
                 db.SaveChanges();
-                return Boolean.TrueString;
+                return RedirectToAction("Index", "Administrar");
             }
             catch
             {
-                return Boolean.FalseString;
+                return RedirectToAction("Index", "Administrar");
             }
         }
 

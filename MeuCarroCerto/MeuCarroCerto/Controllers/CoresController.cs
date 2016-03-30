@@ -29,9 +29,9 @@ namespace MeuCarroCerto.Controllers
             {
                 db.t_cores.Add(cores);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(cores);
+            return RedirectToAction("Index", "Administrar");
         }
 
         public ActionResult Editar(int id)
@@ -47,9 +47,9 @@ namespace MeuCarroCerto.Controllers
             {
                 db.Entry(cores).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(cores);
+            return RedirectToAction("Index", "Administrar");
         }
         public ActionResult Excluir(int id)
         {
@@ -58,11 +58,11 @@ namespace MeuCarroCerto.Controllers
                 t_cores cores = db.t_cores.Find(id);
                 db.t_cores.Remove(cores);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
             catch
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
         }
 

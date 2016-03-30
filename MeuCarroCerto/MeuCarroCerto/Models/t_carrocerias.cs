@@ -18,9 +18,21 @@ using System;
 public partial class t_carrocerias
 {
 
+    public t_carrocerias()
+    {
+
+        this.t_carros = new HashSet<t_carros>();
+
+    }
+
+
     public int codigo { get; set; }
 
     public string nome { get; set; }
+
+
+
+    public virtual ICollection<t_carros> t_carros { get; set; }
 
 }
 

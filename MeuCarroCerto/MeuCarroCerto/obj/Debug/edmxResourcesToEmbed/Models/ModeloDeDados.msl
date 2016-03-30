@@ -62,5 +62,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="t_carros">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros">
+        <MappingFragment StoreEntitySet="t_carros">
+          <ScalarProperty Name="design" ColumnName="design" />
+          <ScalarProperty Name="tempo_de_garantia" ColumnName="tempo_de_garantia" />
+          <ScalarProperty Name="disponibilidade_de_pecas" ColumnName="disponibilidade_de_pecas" />
+          <ScalarProperty Name="rede_concessionaria" ColumnName="rede_concessionaria" />
+          <ScalarProperty Name="ano_projeto" ColumnName="ano_projeto" />
+          <ScalarProperty Name="historico_fabricante" ColumnName="historico_fabricante" />
+          <ScalarProperty Name="teto_solar" ColumnName="teto_solar" />
+          <ScalarProperty Name="roda_liga" ColumnName="roda_liga" />
+          <ScalarProperty Name="piloto_automatico" ColumnName="piloto_automatico" />
+          <ScalarProperty Name="farol_neblina" ColumnName="farol_neblina" />
+          <ScalarProperty Name="camera_de_re" ColumnName="camera_de_re" />
+          <ScalarProperty Name="entrada_usb" ColumnName="entrada_usb" />
+          <ScalarProperty Name="central_multimidia" ColumnName="central_multimidia" />
+          <ScalarProperty Name="desempenho_zero_a_cem" ColumnName="desempenho_zero_a_cem" />
+          <ScalarProperty Name="cambio_automatico" ColumnName="cambio_automatico" />
+          <ScalarProperty Name="alarme" ColumnName="alarme" />
+          <ScalarProperty Name="sensor_de_estacionamento" ColumnName="sensor_de_estacionamento" />
+          <ScalarProperty Name="direcao_hidraulica" ColumnName="direcao_hidraulica" />
+          <ScalarProperty Name="ar_condicionado" ColumnName="ar_condicionado" />
+          <ScalarProperty Name="trio_eletrico" ColumnName="trio_eletrico" />
+          <ScalarProperty Name="qtd_ocupantes" ColumnName="qtd_ocupantes" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="codigo_cor" ColumnName="codigo_cor" />
+          <ScalarProperty Name="codigo_tipo_carroceria" ColumnName="codigo_tipo_carroceria" />
+          <ScalarProperty Name="ano" ColumnName="ano" />
+          <ScalarProperty Name="codigo_marca" ColumnName="codigo_marca" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

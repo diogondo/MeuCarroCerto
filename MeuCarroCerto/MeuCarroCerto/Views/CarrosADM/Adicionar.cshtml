@@ -1,0 +1,237 @@
+﻿@model MeuCarroCerto.Models.t_carros
+
+@{
+    ViewBag.Title = "Adicionar";
+}
+
+<h2>Adicionar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Carros</legend>
+       <div class="editor-label">
+            @Html.LabelFor(model => model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome)
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo_marca)
+        </div>
+        <div class="editor-field">
+            
+            @Html.DropDownListFor(model => model.codigo_marca, (SelectList)ViewBag.marca, "Selecione a marca")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ano)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ano)
+            @Html.ValidationMessageFor(model => model.ano)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo_tipo_carroceria)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.codigo_tipo_carroceria, (SelectList)ViewBag.carrocerias, "Selecione o tipo de carroceria")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigo_cor)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.codigo_cor, (SelectList)ViewBag.cor, "Selecione a cor")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.valor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.valor)
+            @Html.ValidationMessageFor(model => model.valor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.qtd_ocupantes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.qtd_ocupantes)
+            @Html.ValidationMessageFor(model => model.qtd_ocupantes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.trio_eletrico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.trio_eletrico)
+            @Html.ValidationMessageFor(model => model.trio_eletrico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ar_condicionado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ar_condicionado)
+            @Html.ValidationMessageFor(model => model.ar_condicionado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direcao_hidraulica)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direcao_hidraulica)
+            @Html.ValidationMessageFor(model => model.direcao_hidraulica)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sensor_de_estacionamento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.sensor_de_estacionamento)
+            @Html.ValidationMessageFor(model => model.sensor_de_estacionamento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.alarme)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.alarme)
+            @Html.ValidationMessageFor(model => model.alarme)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cambio_automatico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cambio_automatico)
+            @Html.ValidationMessageFor(model => model.cambio_automatico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desempenho_zero_a_cem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desempenho_zero_a_cem)
+            @Html.ValidationMessageFor(model => model.desempenho_zero_a_cem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.central_multimidia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.central_multimidia)
+            @Html.ValidationMessageFor(model => model.central_multimidia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.entrada_usb)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.entrada_usb)
+            @Html.ValidationMessageFor(model => model.entrada_usb)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.camera_de_re)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.camera_de_re)
+            @Html.ValidationMessageFor(model => model.camera_de_re)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.farol_neblina)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.farol_neblina)
+            @Html.ValidationMessageFor(model => model.farol_neblina)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.piloto_automatico)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.piloto_automatico)
+            @Html.ValidationMessageFor(model => model.piloto_automatico)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.roda_liga)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.roda_liga)
+            @Html.ValidationMessageFor(model => model.roda_liga)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.teto_solar)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.teto_solar)
+            @Html.ValidationMessageFor(model => model.teto_solar)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.historico_fabricante)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.historico_fabricante)
+            @Html.ValidationMessageFor(model => model.historico_fabricante)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ano_projeto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ano_projeto)
+            @Html.ValidationMessageFor(model => model.ano_projeto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rede_concessionaria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rede_concessionaria)
+            @Html.ValidationMessageFor(model => model.rede_concessionaria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.disponibilidade_de_pecas)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.disponibilidade_de_pecas)
+            @Html.ValidationMessageFor(model => model.disponibilidade_de_pecas)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tempo_de_garantia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tempo_de_garantia)
+            @Html.ValidationMessageFor(model => model.tempo_de_garantia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.design)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.design)
+            @Html.ValidationMessageFor(model => model.design)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

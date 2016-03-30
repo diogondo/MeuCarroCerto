@@ -13,6 +13,10 @@
         <EntityTypeShape EntityType="MeuCarroCertoDBModel.t_cores" Width="1.5" PointX="0.5" PointY="3.5" />
         <EntityTypeShape EntityType="MeuCarroCertoDBModel.t_carros_teste" Width="1.5" PointX="2.75" PointY="5.875" />
         <AssociationConnector Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste" />
+        <EntityTypeShape EntityType="MeuCarroCertoDBModel.t_carros" Width="1.5" PointX="8" PointY="0.75" />
+        <AssociationConnector Association="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros" />
+        <AssociationConnector Association="MeuCarroCertoDBModel.FK_t_cores_t_carros" />
+        <AssociationConnector Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -15,6 +15,39 @@
     <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="250" />
   </EntityType>
+  <EntityType Name="t_carros">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="250" />
+    <Property Name="codigo_marca" Type="int" Nullable="false" />
+    <Property Name="ano" Type="int" Nullable="false" />
+    <Property Name="codigo_tipo_carroceria" Type="int" Nullable="false" />
+    <Property Name="codigo_cor" Type="bigint" Nullable="false" />
+    <Property Name="valor" Type="int" Nullable="false" />
+    <Property Name="qtd_ocupantes" Type="int" Nullable="false" />
+    <Property Name="trio_eletrico" Type="int" Nullable="false" />
+    <Property Name="ar_condicionado" Type="int" Nullable="false" />
+    <Property Name="direcao_hidraulica" Type="int" Nullable="false" />
+    <Property Name="sensor_de_estacionamento" Type="int" Nullable="false" />
+    <Property Name="alarme" Type="int" Nullable="false" />
+    <Property Name="cambio_automatico" Type="int" Nullable="false" />
+    <Property Name="desempenho_zero_a_cem" Type="int" Nullable="false" />
+    <Property Name="central_multimidia" Type="int" Nullable="false" />
+    <Property Name="entrada_usb" Type="int" Nullable="false" />
+    <Property Name="camera_de_re" Type="int" Nullable="false" />
+    <Property Name="farol_neblina" Type="int" Nullable="false" />
+    <Property Name="piloto_automatico" Type="int" Nullable="false" />
+    <Property Name="roda_liga" Type="int" Nullable="false" />
+    <Property Name="teto_solar" Type="int" Nullable="false" />
+    <Property Name="historico_fabricante" Type="varchar" MaxLength="250" />
+    <Property Name="ano_projeto" Type="int" Nullable="false" />
+    <Property Name="rede_concessionaria" Type="varchar" MaxLength="250" />
+    <Property Name="disponibilidade_de_pecas" Type="varchar" MaxLength="250" />
+    <Property Name="tempo_de_garantia" Type="int" Nullable="false" />
+    <Property Name="design" Type="varchar" MaxLength="250" />
+  </EntityType>
   <EntityType Name="t_carros_teste">
     <Key>
       <PropertyRef Name="codigo" />
@@ -54,6 +87,42 @@
     <Property Name="senha" Type="varchar" MaxLength="250" />
     <Property Name="email" Type="varchar" MaxLength="100" />
   </EntityType>
+  <Association Name="FK_t_carrocerias_t_carros">
+    <End Role="t_carrocerias" Type="Self.t_carrocerias" Multiplicity="1" />
+    <End Role="t_carros" Type="Self.t_carros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_carrocerias">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="t_carros">
+        <PropertyRef Name="codigo_tipo_carroceria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_cores_t_carros">
+    <End Role="t_cores" Type="Self.t_cores" Multiplicity="1" />
+    <End Role="t_carros" Type="Self.t_carros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_cores">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="t_carros">
+        <PropertyRef Name="codigo_cor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_marcas_t_carros">
+    <End Role="t_marcas" Type="Self.t_marcas" Multiplicity="1" />
+    <End Role="t_carros" Type="Self.t_carros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_marcas">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="t_carros">
+        <PropertyRef Name="codigo_marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_t_marcas_t_carros_teste">
     <End Role="t_marcas" Type="Self.t_marcas" Multiplicity="1" />
     <End Role="t_carros_teste" Type="Self.t_carros_teste" Multiplicity="*" />
@@ -69,11 +138,24 @@
   <EntityContainer Name="MeuCarroCertoDBModelStoreContainer">
     <EntitySet Name="t_alternativas" EntityType="Self.t_alternativas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carrocerias" EntityType="Self.t_carrocerias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carros_teste" EntityType="Self.t_carros_teste" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_cores" EntityType="Self.t_cores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_t_carrocerias_t_carros" Association="Self.FK_t_carrocerias_t_carros">
+      <End Role="t_carrocerias" EntitySet="t_carrocerias" />
+      <End Role="t_carros" EntitySet="t_carros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_cores_t_carros" Association="Self.FK_t_cores_t_carros">
+      <End Role="t_cores" EntitySet="t_cores" />
+      <End Role="t_carros" EntitySet="t_carros" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_marcas_t_carros" Association="Self.FK_t_marcas_t_carros">
+      <End Role="t_marcas" EntitySet="t_marcas" />
+      <End Role="t_carros" EntitySet="t_carros" />
+    </AssociationSet>
     <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="Self.FK_t_marcas_t_carros_teste">
       <End Role="t_marcas" EntitySet="t_marcas" />
       <End Role="t_carros_teste" EntitySet="t_carros_teste" />

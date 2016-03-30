@@ -21,9 +21,7 @@ using System.Data.Entity.Infrastructure;
 public partial class EntidadesMeuCarroCertoDB : DbContext
 {
     public EntidadesMeuCarroCertoDB()
-        //: base("name=EntidadesMeuCarroCertoDB")
-        : base("name=db2c210cb9d468430aa757a57f01269a9d")
-        
+        : base("name=EntidadesMeuCarroCertoDB")
     {
 
     }
@@ -47,6 +45,8 @@ public partial class EntidadesMeuCarroCertoDB : DbContext
     public virtual DbSet<t_cores> t_cores { get; set; }
 
     public virtual DbSet<t_carros_teste> t_carros_teste { get; set; }
+
+    public virtual DbSet<t_carros> t_carros { get; set; }
 
 }
 
