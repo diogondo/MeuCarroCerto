@@ -28,8 +28,6 @@ public partial class t_carros
 
     public int codigo_tipo_carroceria { get; set; }
 
-    public long codigo_cor { get; set; }
-
     public int valor { get; set; }
 
     public int qtd_ocupantes { get; set; }
@@ -77,8 +75,6 @@ public partial class t_carros
 
 
     public virtual t_carrocerias t_carrocerias { get; set; }
-
-    public virtual t_cores t_cores { get; set; }
 
     public virtual t_marcas t_marcas { get; set; }
 
