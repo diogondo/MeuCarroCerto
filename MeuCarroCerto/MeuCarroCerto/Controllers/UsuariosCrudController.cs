@@ -36,9 +36,9 @@ namespace MeuCarroCerto.Controllers
             {
                 db.t_usuarios.Add(usuarios);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(usuarios);
+            return RedirectToAction("Index", "Administrar");
         }
         public ActionResult Editar(int id)
         {
@@ -53,9 +53,9 @@ namespace MeuCarroCerto.Controllers
             {
                 db.Entry(usuarios).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Administrar");
             }
-            return View(usuarios);
+            return RedirectToAction("Index", "Administrar");
         }
 
 //        [HttpPost]
