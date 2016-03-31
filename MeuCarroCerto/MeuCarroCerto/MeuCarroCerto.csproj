@@ -121,7 +121,6 @@
     <Compile Include="Controllers\CarroceriasController.cs" />
     <Compile Include="Controllers\CarrosADMController.cs" />
     <Compile Include="Controllers\CarroTesteController.cs" />
-    <Compile Include="Controllers\CoresController.cs" />
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -159,9 +158,6 @@
       <DependentUpon>ModeloDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_carros_teste.cs">
-      <DependentUpon>ModeloDeDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\t_cores.cs">
       <DependentUpon>ModeloDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_criterios.cs">
@@ -241,9 +237,6 @@
     <Content Include="Views\Criterios\Index.cshtml" />
     <Content Include="Views\Criterios\Adicionar.cshtml" />
     <Content Include="Views\Criterios\Editar.cshtml" />
-    <Content Include="Views\Cores\Adicionar.cshtml" />
-    <Content Include="Views\Cores\Editar.cshtml" />
-    <Content Include="Views\Cores\Index.cshtml" />
     <Content Include="Views\CarroTeste\Index.cshtml" />
     <Content Include="Views\CarroTeste\Details.cshtml" />
     <Content Include="Views\CarroTeste\Create.cshtml" />
