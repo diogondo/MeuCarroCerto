@@ -45,14 +45,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="t_cores">
-      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_cores">
-        <MappingFragment StoreEntitySet="t_cores">
-          <ScalarProperty Name="nome" ColumnName="nome" />
-          <ScalarProperty Name="codigo" ColumnName="codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="t_carros_teste">
       <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros_teste">
         <MappingFragment StoreEntitySet="t_carros_teste">
@@ -87,7 +79,6 @@
           <ScalarProperty Name="trio_eletrico" ColumnName="trio_eletrico" />
           <ScalarProperty Name="qtd_ocupantes" ColumnName="qtd_ocupantes" />
           <ScalarProperty Name="valor" ColumnName="valor" />
-          <ScalarProperty Name="codigo_cor" ColumnName="codigo_cor" />
           <ScalarProperty Name="codigo_tipo_carroceria" ColumnName="codigo_tipo_carroceria" />
           <ScalarProperty Name="ano" ColumnName="ano" />
           <ScalarProperty Name="codigo_marca" ColumnName="codigo_marca" />

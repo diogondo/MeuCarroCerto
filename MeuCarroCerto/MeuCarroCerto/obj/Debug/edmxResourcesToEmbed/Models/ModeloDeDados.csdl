@@ -25,7 +25,6 @@
     <EntitySet Name="t_carrocerias" EntityType="MeuCarroCertoDBModel.t_carrocerias" />
     <EntitySet Name="t_criterios" EntityType="MeuCarroCertoDBModel.t_criterios" />
     <EntitySet Name="t_alternativas" EntityType="MeuCarroCertoDBModel.t_alternativas" />
-    <EntitySet Name="t_cores" EntityType="MeuCarroCertoDBModel.t_cores" />
     <EntitySet Name="t_carros_teste" EntityType="MeuCarroCertoDBModel.t_carros_teste" />
     <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste">
       <End Role="t_marcas" EntitySet="t_marcas" />
@@ -34,10 +33,6 @@
     <EntitySet Name="t_carros" EntityType="MeuCarroCertoDBModel.t_carros" />
     <AssociationSet Name="FK_t_carrocerias_t_carros" Association="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros">
       <End Role="t_carrocerias" EntitySet="t_carrocerias" />
-      <End Role="t_carros" EntitySet="t_carros" />
-    </AssociationSet>
-    <AssociationSet Name="FK_t_cores_t_carros" Association="MeuCarroCertoDBModel.FK_t_cores_t_carros">
-      <End Role="t_cores" EntitySet="t_cores" />
       <End Role="t_carros" EntitySet="t_carros" />
     </AssociationSet>
     <AssociationSet Name="FK_t_marcas_t_carros" Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros">
@@ -67,14 +62,6 @@
     <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="codigo_criterio" Type="Int32" />
-  </EntityType>
-  <EntityType Name="t_cores">
-    <Key>
-      <PropertyRef Name="codigo" />
-    </Key>
-    <Property Name="codigo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="t_carros" Relationship="MeuCarroCertoDBModel.FK_t_cores_t_carros" FromRole="t_cores" ToRole="t_carros" />
   </EntityType>
   <EntityType Name="t_carros_teste">
     <Key>
@@ -106,7 +93,6 @@
     <Property Name="codigo_marca" Type="Int32" Nullable="false" />
     <Property Name="ano" Type="Int32" Nullable="false" />
     <Property Name="codigo_tipo_carroceria" Type="Int32" Nullable="false" />
-    <Property Name="codigo_cor" Type="Int64" Nullable="false" />
     <Property Name="valor" Type="Int32" Nullable="false" />
     <Property Name="qtd_ocupantes" Type="Int32" Nullable="false" />
     <Property Name="trio_eletrico" Type="Int32" Nullable="false" />
@@ -130,7 +116,6 @@
     <Property Name="tempo_de_garantia" Type="Int32" Nullable="false" />
     <Property Name="design" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="t_carrocerias" Relationship="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros" FromRole="t_carros" ToRole="t_carrocerias" />
-    <NavigationProperty Name="t_cores" Relationship="MeuCarroCertoDBModel.FK_t_cores_t_carros" FromRole="t_carros" ToRole="t_cores" />
     <NavigationProperty Name="t_marcas" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros" FromRole="t_carros" ToRole="t_marcas" />
   </EntityType>
   <Association Name="FK_t_carrocerias_t_carros">
@@ -142,18 +127,6 @@
       </Principal>
       <Dependent Role="t_carros">
         <PropertyRef Name="codigo_tipo_carroceria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_t_cores_t_carros">
-    <End Type="MeuCarroCertoDBModel.t_cores" Role="t_cores" Multiplicity="1" />
-    <End Type="MeuCarroCertoDBModel.t_carros" Role="t_carros" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="t_cores">
-        <PropertyRef Name="codigo" />
-      </Principal>
-      <Dependent Role="t_carros">
-        <PropertyRef Name="codigo_cor" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

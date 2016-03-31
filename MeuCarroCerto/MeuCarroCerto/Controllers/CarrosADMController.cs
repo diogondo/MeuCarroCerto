@@ -20,7 +20,6 @@ namespace MeuCarroCerto.Controllers
         {
             ViewBag.marca = new SelectList(db.t_marcas, "codigo", "nome");
             ViewBag.carrocerias = new SelectList(db.t_carrocerias, "codigo", "nome");
-            ViewBag.cor = new SelectList(db.t_cores, "codigo", "nome");
             return View();
         }
         [HttpPost]
@@ -39,7 +38,6 @@ namespace MeuCarroCerto.Controllers
         {
             ViewBag.marca = new SelectList(db.t_marcas, "codigo", "nome");
             ViewBag.carrocerias = new SelectList(db.t_carrocerias, "codigo", "nome");
-            ViewBag.cor = new SelectList(db.t_cores, "codigo", "nome");
             t_carros carros = db.t_carros.Find(id);
             return View(carros);
         }

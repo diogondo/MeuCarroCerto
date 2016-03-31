@@ -42,8 +42,6 @@ public partial class EntidadesMeuCarroCertoDB : DbContext
 
     public virtual DbSet<t_alternativas> t_alternativas { get; set; }
 
-    public virtual DbSet<t_carros_teste> t_carros_teste { get; set; }
-
     public virtual DbSet<t_carros> t_carros { get; set; }
 
 }

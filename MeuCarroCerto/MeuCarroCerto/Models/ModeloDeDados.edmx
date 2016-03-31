@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MeuCarroCertoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MeuCarroCertoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="t_alternativas">
           <Key>
             <PropertyRef Name="codigo" />
@@ -52,14 +52,6 @@
           <Property Name="disponibilidade_de_pecas" Type="varchar" MaxLength="250" />
           <Property Name="tempo_de_garantia" Type="int" Nullable="false" />
           <Property Name="design" Type="varchar" MaxLength="250" />
-        </EntityType>
-        <EntityType Name="t_carros_teste">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="codigo_marcas" Type="int" Nullable="false" />
-          <Property Name="nome" Type="varchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="t_criterios">
           <Key>
@@ -109,23 +101,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_t_marcas_t_carros_teste">
-          <End Role="t_marcas" Type="Self.t_marcas" Multiplicity="1" />
-          <End Role="t_carros_teste" Type="Self.t_carros_teste" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="t_marcas">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="t_carros_teste">
-              <PropertyRef Name="codigo_marcas" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="MeuCarroCertoDBModelStoreContainer">
           <EntitySet Name="t_alternativas" EntityType="Self.t_alternativas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_carrocerias" EntityType="Self.t_carrocerias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="t_carros_teste" EntityType="Self.t_carros_teste" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
@@ -136,10 +115,6 @@
           <AssociationSet Name="FK_t_marcas_t_carros" Association="Self.FK_t_marcas_t_carros">
             <End Role="t_marcas" EntitySet="t_marcas" />
             <End Role="t_carros" EntitySet="t_carros" />
-          </AssociationSet>
-          <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="Self.FK_t_marcas_t_carros_teste">
-            <End Role="t_marcas" EntitySet="t_marcas" />
-            <End Role="t_carros_teste" EntitySet="t_carros_teste" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -152,7 +127,6 @@
           </Key>
           <Property Name="codigo" Type="Int32" Nullable="false" />
           <Property Name="nome" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_carros_teste" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste" FromRole="t_marcas" ToRole="t_carros_teste" />
           <NavigationProperty Name="t_carros" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros" FromRole="t_marcas" ToRole="t_carros" />
         </EntityType>
         <EntityType Name="t_usuarios">
@@ -171,11 +145,6 @@
           <EntitySet Name="t_carrocerias" EntityType="MeuCarroCertoDBModel.t_carrocerias" />
           <EntitySet Name="t_criterios" EntityType="MeuCarroCertoDBModel.t_criterios" />
           <EntitySet Name="t_alternativas" EntityType="MeuCarroCertoDBModel.t_alternativas" />
-          <EntitySet Name="t_carros_teste" EntityType="MeuCarroCertoDBModel.t_carros_teste" />
-          <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste">
-            <End Role="t_marcas" EntitySet="t_marcas" />
-            <End Role="t_carros_teste" EntitySet="t_carros_teste" />
-          </AssociationSet>
           <EntitySet Name="t_carros" EntityType="MeuCarroCertoDBModel.t_carros" />
           <AssociationSet Name="FK_t_carrocerias_t_carros" Association="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros">
             <End Role="t_carrocerias" EntitySet="t_carrocerias" />
@@ -209,27 +178,6 @@
           <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="codigo_criterio" Type="Int32" />
         </EntityType>
-        <EntityType Name="t_carros_teste">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="codigo_marcas" Type="Int32" Nullable="false" />
-          <Property Name="nome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_marcas" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros_teste" FromRole="t_carros_teste" ToRole="t_marcas" />
-        </EntityType>
-        <Association Name="FK_t_marcas_t_carros_teste">
-          <End Type="MeuCarroCertoDBModel.t_marcas" Role="t_marcas" Multiplicity="1" />
-          <End Type="MeuCarroCertoDBModel.t_carros_teste" Role="t_carros_teste" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="t_marcas">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="t_carros_teste">
-              <PropertyRef Name="codigo_marcas" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="t_carros">
           <Key>
             <PropertyRef Name="codigo" />
@@ -334,15 +282,6 @@
               <MappingFragment StoreEntitySet="t_alternativas">
                 <ScalarProperty Name="codigo_criterio" ColumnName="codigo_criterio" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="t_carros_teste">
-            <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros_teste">
-              <MappingFragment StoreEntitySet="t_carros_teste">
-                <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="codigo_marcas" ColumnName="codigo_marcas" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
               </MappingFragment>
             </EntityTypeMapping>

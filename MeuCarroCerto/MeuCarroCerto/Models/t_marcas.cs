@@ -21,8 +21,6 @@ public partial class t_marcas
     public t_marcas()
     {
 
-        this.t_carros_teste = new HashSet<t_carros_teste>();
-
         this.t_carros = new HashSet<t_carros>();
 
     }
@@ -33,8 +31,6 @@ public partial class t_marcas
     public string nome { get; set; }
 
 
-
-    public virtual ICollection<t_carros_teste> t_carros_teste { get; set; }
 
     public virtual ICollection<t_carros> t_carros { get; set; }
 

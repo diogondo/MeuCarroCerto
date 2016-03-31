@@ -56,13 +56,6 @@
     <Property Name="codigo_marcas" Type="int" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="80" />
   </EntityType>
-  <EntityType Name="t_cores">
-    <Key>
-      <PropertyRef Name="codigo" />
-    </Key>
-    <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nome" Type="varchar" MaxLength="80" />
-  </EntityType>
   <EntityType Name="t_criterios">
     <Key>
       <PropertyRef Name="codigo" />
@@ -99,18 +92,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_t_cores_t_carros">
-    <End Role="t_cores" Type="Self.t_cores" Multiplicity="1" />
-    <End Role="t_carros" Type="Self.t_carros" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="t_cores">
-        <PropertyRef Name="codigo" />
-      </Principal>
-      <Dependent Role="t_carros">
-        <PropertyRef Name="codigo_cor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_t_marcas_t_carros">
     <End Role="t_marcas" Type="Self.t_marcas" Multiplicity="1" />
     <End Role="t_carros" Type="Self.t_carros" Multiplicity="*" />
@@ -140,16 +121,11 @@
     <EntitySet Name="t_carrocerias" EntityType="Self.t_carrocerias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carros_teste" EntityType="Self.t_carros_teste" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="t_cores" EntityType="Self.t_cores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_t_carrocerias_t_carros" Association="Self.FK_t_carrocerias_t_carros">
       <End Role="t_carrocerias" EntitySet="t_carrocerias" />
-      <End Role="t_carros" EntitySet="t_carros" />
-    </AssociationSet>
-    <AssociationSet Name="FK_t_cores_t_carros" Association="Self.FK_t_cores_t_carros">
-      <End Role="t_cores" EntitySet="t_cores" />
       <End Role="t_carros" EntitySet="t_carros" />
     </AssociationSet>
     <AssociationSet Name="FK_t_marcas_t_carros" Association="Self.FK_t_marcas_t_carros">
