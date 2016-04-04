@@ -52,15 +52,6 @@
             @Html.DropDownListFor(model => model.codigo_tipo_carroceria, (SelectList)ViewBag.carrocerias, "codigo")
             @Html.ValidationMessageFor(model => model.codigo_tipo_carroceria)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.codigo_cor)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.codigo_cor, (SelectList)ViewBag.cor, "codigo")
-            @Html.ValidationMessageFor(model => model.codigo_cor)
-        </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.valor)
         </div>

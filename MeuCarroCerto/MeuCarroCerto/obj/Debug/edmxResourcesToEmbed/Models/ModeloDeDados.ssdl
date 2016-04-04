@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MeuCarroCertoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="MeuCarroCertoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="t_alternativas">
     <Key>
       <PropertyRef Name="codigo" />
@@ -24,7 +24,6 @@
     <Property Name="codigo_marca" Type="int" Nullable="false" />
     <Property Name="ano" Type="int" Nullable="false" />
     <Property Name="codigo_tipo_carroceria" Type="int" Nullable="false" />
-    <Property Name="codigo_cor" Type="bigint" Nullable="false" />
     <Property Name="valor" Type="int" Nullable="false" />
     <Property Name="qtd_ocupantes" Type="int" Nullable="false" />
     <Property Name="trio_eletrico" Type="int" Nullable="false" />
@@ -47,14 +46,6 @@
     <Property Name="disponibilidade_de_pecas" Type="varchar" MaxLength="250" />
     <Property Name="tempo_de_garantia" Type="int" Nullable="false" />
     <Property Name="design" Type="varchar" MaxLength="250" />
-  </EntityType>
-  <EntityType Name="t_carros_teste">
-    <Key>
-      <PropertyRef Name="codigo" />
-    </Key>
-    <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="codigo_marcas" Type="int" Nullable="false" />
-    <Property Name="nome" Type="varchar" MaxLength="80" />
   </EntityType>
   <EntityType Name="t_criterios">
     <Key>
@@ -104,23 +95,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_t_marcas_t_carros_teste">
-    <End Role="t_marcas" Type="Self.t_marcas" Multiplicity="1" />
-    <End Role="t_carros_teste" Type="Self.t_carros_teste" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="t_marcas">
-        <PropertyRef Name="codigo" />
-      </Principal>
-      <Dependent Role="t_carros_teste">
-        <PropertyRef Name="codigo_marcas" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="MeuCarroCertoDBModelStoreContainer">
     <EntitySet Name="t_alternativas" EntityType="Self.t_alternativas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carrocerias" EntityType="Self.t_carrocerias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="t_carros_teste" EntityType="Self.t_carros_teste" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
@@ -131,10 +109,6 @@
     <AssociationSet Name="FK_t_marcas_t_carros" Association="Self.FK_t_marcas_t_carros">
       <End Role="t_marcas" EntitySet="t_marcas" />
       <End Role="t_carros" EntitySet="t_carros" />
-    </AssociationSet>
-    <AssociationSet Name="FK_t_marcas_t_carros_teste" Association="Self.FK_t_marcas_t_carros_teste">
-      <End Role="t_marcas" EntitySet="t_marcas" />
-      <End Role="t_carros_teste" EntitySet="t_carros_teste" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -29,9 +29,6 @@
             @Html.DisplayNameFor(model => model.codigo_tipo_carroceria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.codigo_cor)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.valor)
         </th>
         <th>
@@ -100,97 +97,95 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo_marca)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ano)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo_tipo_carroceria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo_cor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.qtd_ocupantes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.trio_eletrico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ar_condicionado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.direcao_hidraulica)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sensor_de_estacionamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.alarme)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cambio_automatico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.desempenho_zero_a_cem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.central_multimidia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.entrada_usb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.camera_de_re)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.farol_neblina)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.piloto_automatico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.roda_liga)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.teto_solar)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.historico_fabricante)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ano_projeto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rede_concessionaria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.disponibilidade_de_pecas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tempo_de_garantia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.design)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id = item.codigo })
-            @Html.ActionLink("Excluir", "Excluir", new { id = item.codigo }, new { @class = "excluir" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_tipo_carroceria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtd_ocupantes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trio_eletrico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ar_condicionado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.direcao_hidraulica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sensor_de_estacionamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alarme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cambio_automatico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desempenho_zero_a_cem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.central_multimidia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.entrada_usb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.camera_de_re)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.farol_neblina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.piloto_automatico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.roda_liga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teto_solar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.historico_fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ano_projeto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rede_concessionaria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.disponibilidade_de_pecas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tempo_de_garantia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.design)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.codigo })
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.codigo }, new { @class = "excluir" })
+            </td>
+        </tr>
+    }
 
 </table>

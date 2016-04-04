@@ -29,7 +29,6 @@
           <Property Name="codigo_marca" Type="int" Nullable="false" />
           <Property Name="ano" Type="int" Nullable="false" />
           <Property Name="codigo_tipo_carroceria" Type="int" Nullable="false" />
-          <Property Name="codigo_cor" Type="bigint" Nullable="false" />
           <Property Name="valor" Type="int" Nullable="false" />
           <Property Name="qtd_ocupantes" Type="int" Nullable="false" />
           <Property Name="trio_eletrico" Type="int" Nullable="false" />
@@ -154,7 +153,7 @@
             <End Role="t_marcas" EntitySet="t_marcas" />
             <End Role="t_carros" EntitySet="t_carros" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="t_carrocerias">
           <Key>
             <PropertyRef Name="codigo" />
@@ -236,7 +235,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

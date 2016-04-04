@@ -45,15 +45,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="t_carros_teste">
-      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros_teste">
-        <MappingFragment StoreEntitySet="t_carros_teste">
-          <ScalarProperty Name="nome" ColumnName="nome" />
-          <ScalarProperty Name="codigo_marcas" ColumnName="codigo_marcas" />
-          <ScalarProperty Name="codigo" ColumnName="codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="t_carros">
       <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros">
         <MappingFragment StoreEntitySet="t_carros">

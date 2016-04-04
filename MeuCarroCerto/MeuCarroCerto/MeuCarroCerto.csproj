@@ -210,7 +210,9 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\Login.Home.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -234,8 +236,8 @@
     <Content Include="Views\Criterios\Adicionar.cshtml" />
     <Content Include="Views\Criterios\Editar.cshtml" />
     <Content Include="Views\Administrar\Index.cshtml" />
-    <Content Include="Views\CarrosADM\Adicionar.cshtml" />
     <Content Include="Views\CarrosADM\Index.cshtml" />
+    <Content Include="Views\CarrosADM\Adicionar.cshtml" />
     <Content Include="Views\CarrosADM\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup />
