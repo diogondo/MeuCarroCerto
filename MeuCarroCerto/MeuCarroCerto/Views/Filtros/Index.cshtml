@@ -26,10 +26,16 @@
         </div>
 
         <div class="editor-label">
-            @Html.Label("Valor")
+            @Html.Label("Valor de")
         </div>
         <div class="editor-field">
-           @Html.DropDownListFor(model => model.valor, (SelectList)ViewBag.valor, "Selecione o valor do veiculo.")
+           @Html.DropDownListFor(model => model.valor1, (SelectList)ViewBag.valor, "Selecione o valor do veiculo.")
+        </div>
+        <div class="editor-label">
+            @Html.Label("Valor até")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.valor2, (SelectList)ViewBag.valor, "Selecione o valor do veiculo.")
         </div>
 
         <div class="editor-label">
