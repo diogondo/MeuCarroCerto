@@ -83,7 +83,7 @@
     <Property Name="piloto_automatico" Type="Int32" Nullable="false" />
     <Property Name="roda_liga" Type="Int32" Nullable="false" />
     <Property Name="teto_solar" Type="Int32" Nullable="false" />
-    <Property Name="historico_fabricante" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="historico_fabricante" Type="String" Unicode="false" FixedLength="false" MaxLength="250" />
     <Property Name="ano_projeto" Type="Int32" Nullable="false" />
     <Property Name="rede_concessionaria" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <Property Name="disponibilidade_de_pecas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
