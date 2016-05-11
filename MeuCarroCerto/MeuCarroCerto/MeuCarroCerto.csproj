@@ -117,21 +117,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AdministrarController.cs" />
+    <Compile Include="Controllers\AlternativasController.cs" />
     <Compile Include="Controllers\BaseControllerController.cs" />
     <Compile Include="Controllers\CarroceriasController.cs" />
     <Compile Include="Controllers\CarrosADMController.cs" />
     <Compile Include="Controllers\CriteriosController.cs" />
+    <Compile Include="Controllers\CriteriosPessoaController.cs" />
     <Compile Include="Controllers\FiltrosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
+    <Compile Include="Controllers\ResultadoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\UsuariosCrudController.cs" />
     <Compile Include="Filtros\AutorizacaoDeAcesso.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Alternativas.cs" />
     <Compile Include="Models\Auxiliar.cs" />
+    <Compile Include="Models\BancoSession.cs" />
+    <Compile Include="Models\CriteriosPessoa.cs" />
+    <Compile Include="Models\Filtros.cs" />
     <Compile Include="Models\MarcasMetadado.cs" />
+    <Compile Include="Models\MatrizCriterios.cs" />
     <Compile Include="Models\ModeloDeDados.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +168,9 @@
       <DependentUpon>ModeloDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_marcas.cs">
+      <DependentUpon>ModeloDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_parametros.cs">
       <DependentUpon>ModeloDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\t_usuarios.cs">
@@ -239,6 +250,9 @@
     <Content Include="Views\CarrosADM\Index.cshtml" />
     <Content Include="Views\CarrosADM\Adicionar.cshtml" />
     <Content Include="Views\CarrosADM\Editar.cshtml" />
+    <Content Include="Views\CriteriosPessoa\Index.cshtml" />
+    <Content Include="Views\Alternativas\Index.cshtml" />
+    <Content Include="Views\Resultado\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

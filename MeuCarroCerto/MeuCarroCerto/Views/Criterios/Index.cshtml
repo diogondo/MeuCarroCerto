@@ -7,18 +7,17 @@
     Layout = null;
 }
 
-<h2>Critérios</h2>
-
+<legend>CRITÉRIOS</legend>
 <p>
     @Html.ActionLink("Adicionar critérios", "Adicionar", null, new { @class = "btn btn-primary" })
 </p>
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.codigo)
+            @Html.DisplayName("Código")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nome)
+            @Html.DisplayName("Nome")
         </th>
         <th></th>
     </tr>

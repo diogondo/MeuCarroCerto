@@ -1,6 +1,56 @@
-﻿@{
+﻿@model MeuCarroCerto.Models.Filtros
+@{
     ViewBag.Title = "Filtros";
 }
+<h2>Selecione dentre as opções, o que o veículo  desejado deve contemplar. </h2>
 
-<img src="http://www.posse.ueg.br/images/emconstrucao.gif">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Carros</legend>
+        <div class="editor-label">
+            @Html.Label("Quantidade de ocupantes")
+        </div>
+         <div class="editor-field">
+            @Html.DropDownListFor(model => model.qtd_ocupante, (SelectList)ViewBag.qtd, "Selecione a quantidade de ocupantes do veiculo.")
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Tipo de carroceria")
+        </div>
+        <div class="editor-field">
+           @Html.DropDownListFor(model => model.tipo_carroceria, (SelectList)ViewBag.carroceria, "Selecione a carroceria do veiculo.")
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Valor")
+        </div>
+        <div class="editor-field">
+           @Html.DropDownListFor(model => model.valor, (SelectList)ViewBag.valor, "Selecione o valor do veiculo.")
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("De ano")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ano1, (SelectList)ViewBag.ano, "Selecione o ano do veiculo.")
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Até ano")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ano2, (SelectList)ViewBag.ano, "Selecione o ano do veiculo.")
+        </div>
+
+
+
+      <p>
+            <input type="submit" value="Continuar" />
+        </p>
+    </fieldset>
+}
 

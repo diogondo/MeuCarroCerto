@@ -48,6 +48,23 @@
     <EntitySetMapping Name="t_carros">
       <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros">
         <MappingFragment StoreEntitySet="t_carros">
+          <ScalarProperty Name="airbag" ColumnName="airbag" />
+          <ScalarProperty Name="consumo" ColumnName="consumo" />
+          <ScalarProperty Name="freio_com_ABS" ColumnName="freio_com_ABS" />
+          <ScalarProperty Name="controle_de_estabilidade_ESP" ColumnName="controle_de_estabilidade_ESP" />
+          <ScalarProperty Name="aventureiro" ColumnName="aventureiro" />
+          <ScalarProperty Name="boa_imagem" ColumnName="boa_imagem" />
+          <ScalarProperty Name="exclusividade" ColumnName="exclusividade" />
+          <ScalarProperty Name="conquista" ColumnName="conquista" />
+          <ScalarProperty Name="custo_de_manutencao" ColumnName="custo_de_manutencao" />
+          <ScalarProperty Name="valor_do_seguro" ColumnName="valor_do_seguro" />
+          <ScalarProperty Name="ipva" ColumnName="ipva" />
+          <ScalarProperty Name="freio_com_BAS" ColumnName="freio_com_BAS" />
+          <ScalarProperty Name="freio_com_EBD" ColumnName="freio_com_EBD" />
+          <ScalarProperty Name="controle_de_tracao" ColumnName="controle_de_tracao" />
+          <ScalarProperty Name="avaliacao_crash_test" ColumnName="avaliacao_crash_test" />
+          <ScalarProperty Name="banco_de_couro" ColumnName="banco_de_couro" />
+          <ScalarProperty Name="blindagem" ColumnName="blindagem" />
           <ScalarProperty Name="design" ColumnName="design" />
           <ScalarProperty Name="tempo_de_garantia" ColumnName="tempo_de_garantia" />
           <ScalarProperty Name="disponibilidade_de_pecas" ColumnName="disponibilidade_de_pecas" />
@@ -75,6 +92,16 @@
           <ScalarProperty Name="codigo_marca" ColumnName="codigo_marca" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_parametros">
+      <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_parametros">
+        <MappingFragment StoreEntitySet="t_parametros">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

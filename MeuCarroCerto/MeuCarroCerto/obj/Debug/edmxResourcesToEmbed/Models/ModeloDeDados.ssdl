@@ -22,7 +22,10 @@
     <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="250" />
     <Property Name="codigo_marca" Type="int" Nullable="false" />
+    <Property Name="blindagem" Type="int" Nullable="false" />
+    <Property Name="banco_de_couro" Type="int" Nullable="false" />
     <Property Name="ano" Type="int" Nullable="false" />
+    <Property Name="avaliacao_crash_test" Type="int" Nullable="false" />
     <Property Name="codigo_tipo_carroceria" Type="int" Nullable="false" />
     <Property Name="valor" Type="int" Nullable="false" />
     <Property Name="qtd_ocupantes" Type="int" Nullable="false" />
@@ -31,15 +34,29 @@
     <Property Name="direcao_hidraulica" Type="int" Nullable="false" />
     <Property Name="sensor_de_estacionamento" Type="int" Nullable="false" />
     <Property Name="alarme" Type="int" Nullable="false" />
+    <Property Name="controle_de_tracao" Type="int" Nullable="false" />
+    <Property Name="freio_com_EBD" Type="int" Nullable="false" />
+    <Property Name="freio_com_BAS" Type="int" Nullable="false" />
+    <Property Name="ipva" Type="int" Nullable="false" />
+    <Property Name="valor_do_seguro" Type="int" Nullable="false" />
+    <Property Name="custo_de_manutencao" Type="int" Nullable="false" />
+    <Property Name="conquista" Type="int" Nullable="false" />
+    <Property Name="exclusividade" Type="int" Nullable="false" />
+    <Property Name="boa_imagem" Type="int" Nullable="false" />
+    <Property Name="aventureiro" Type="int" Nullable="false" />
     <Property Name="cambio_automatico" Type="int" Nullable="false" />
     <Property Name="desempenho_zero_a_cem" Type="int" Nullable="false" />
     <Property Name="central_multimidia" Type="int" Nullable="false" />
     <Property Name="entrada_usb" Type="int" Nullable="false" />
     <Property Name="camera_de_re" Type="int" Nullable="false" />
+    <Property Name="controle_de_estabilidade_ESP" Type="int" Nullable="false" />
     <Property Name="farol_neblina" Type="int" Nullable="false" />
+    <Property Name="freio_com_ABS" Type="int" Nullable="false" />
+    <Property Name="consumo" Type="int" Nullable="false" />
     <Property Name="piloto_automatico" Type="int" Nullable="false" />
     <Property Name="roda_liga" Type="int" Nullable="false" />
     <Property Name="teto_solar" Type="int" Nullable="false" />
+    <Property Name="airbag" Type="int" Nullable="false" />
     <Property Name="historico_fabricante" Type="varchar" MaxLength="250" />
     <Property Name="ano_projeto" Type="int" Nullable="false" />
     <Property Name="rede_concessionaria" Type="varchar" MaxLength="250" />
@@ -60,6 +77,15 @@
     </Key>
     <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="t_parametros">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="peso" Type="varchar" MaxLength="80" />
+    <Property Name="desc" Type="varchar" MaxLength="80" />
+    <Property Name="tipo" Type="varchar" MaxLength="80" />
   </EntityType>
   <EntityType Name="t_usuarios">
     <Key>
@@ -101,6 +127,7 @@
     <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_parametros" EntityType="Self.t_parametros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_t_carrocerias_t_carros" Association="Self.FK_t_carrocerias_t_carros">
       <End Role="t_carrocerias" EntitySet="t_carrocerias" />

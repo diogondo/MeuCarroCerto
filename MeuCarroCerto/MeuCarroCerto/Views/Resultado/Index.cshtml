@@ -1,0 +1,297 @@
+﻿@model IEnumerable<MeuCarroCerto.Models.t_carros>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Melhores carros</h2>
+
+
+<legend>Necessidades</legend>
+<table>
+    @foreach (var item in Model)
+    {
+
+        
+        <th>
+            <br />
+            @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+            @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+            @if (ViewBag.alternativas.ar_condicionado == true)
+            {
+                @Html.Label("Ar Condicionado: ") @Html.DisplayFor(modelItem => item.ar_condicionado)<br />
+                ViewBag.cont = ViewBag.cont + item.ar_condicionado;
+            }
+            @if (ViewBag.alternativas.trio_eletrico == true)
+            {
+                @Html.Label("Trio Eletrico: ") @Html.DisplayFor(modelItem => item.trio_eletrico)<br />
+                ViewBag.cont = ViewBag.cont + item.trio_eletrico;
+            }
+            @if (ViewBag.alternativas.direcao_hidrulica == true)
+            {
+                @Html.Label("Direcao hidraulica: ") @Html.DisplayFor(modelItem => item.direcao_hidraulica)<br />
+                ViewBag.cont = ViewBag.cont + item.direcao_hidraulica;
+            }
+            @if (ViewBag.alternativas.banco_de_couro == true)
+            {
+                @Html.Label("Banco de couro: ") @Html.DisplayFor(modelItem => item.banco_de_couro)<br />
+                ViewBag.cont = ViewBag.cont + item.banco_de_couro;
+            }
+            @if (ViewBag.alternativas.sensor_de_estacionamento == true)
+            {
+                @Html.Label("Sensor de estacionamento: ") @Html.DisplayFor(modelItem => item.sensor_de_estacionamento)<br />
+                ViewBag.cont = ViewBag.cont + item.sensor_de_estacionamento;
+            }
+            @if (ViewBag.alternativas.alarme == true)
+            {
+                @Html.Label("Alarme: ") @Html.DisplayFor(modelItem => item.alarme)<br />
+                ViewBag.cont = ViewBag.cont + item.alarme;
+            }
+            @if (ViewBag.alternativas.cambio_automatico == true)
+            {
+                @Html.Label("Cambio automático: ") @Html.DisplayFor(modelItem => item.cambio_automatico)<br />
+                ViewBag.cont = ViewBag.cont + item.cambio_automatico;
+            }
+            @if (ViewBag.alternativas.desempenho_0_a_100 == true)
+            {
+                @Html.Label("Desempenho de zero a cem: ") @Html.DisplayFor(modelItem => item.desempenho_zero_a_cem)<br />
+                ViewBag.cont = ViewBag.cont + item.desempenho_zero_a_cem;
+            }
+            @if (ViewBag.alternativas.central_multimidia == true)
+            {
+                @Html.Label("Central multimidia: ") @Html.DisplayFor(modelItem => item.central_multimidia)<br />
+                ViewBag.cont = ViewBag.cont + item.central_multimidia;
+            }
+            
+            @if (ViewBag.alternativas.sistema_de_som_com_entrada_USB == true)
+            {
+                @Html.Label("Sistema de som com entrada USB: ") @Html.DisplayFor(modelItem => item.entrada_usb)<br />
+                ViewBag.cont = ViewBag.cont + item.entrada_usb;
+            }
+
+            @if (ViewBag.alternativas.camera_de_re == true)
+            {
+                @Html.Label("Camera de ré ") @Html.DisplayFor(modelItem => item.camera_de_re)<br />
+                ViewBag.cont = ViewBag.cont + item.camera_de_re;
+            }
+            
+            @if (ViewBag.alternativas.farol_de_neblina == true)
+            {
+                @Html.Label("Faról de neblina ") @Html.DisplayFor(modelItem => item.farol_neblina)<br />
+                ViewBag.cont = ViewBag.cont + item.farol_neblina;
+            }
+            
+            @if (ViewBag.alternativas.piloto_automatico == true)
+            {
+                @Html.Label("Piloto automático: ") @Html.DisplayFor(modelItem => item.piloto_automatico)<br />
+                ViewBag.cont = ViewBag.cont + item.piloto_automatico;
+            }
+
+            @if (ViewBag.alternativas.rodas_de_liga == true)
+            {
+                @Html.Label("Rodas de liga: ") @Html.DisplayFor(modelItem => item.roda_liga)<br />
+                ViewBag.cont = ViewBag.cont + item.roda_liga;
+            }
+            
+            @if (ViewBag.alternativas.teto_solar == true)
+            {
+                @Html.Label("Teto solar: ") @Html.DisplayFor(modelItem => item.teto_solar)<br />
+                ViewBag.cont = ViewBag.cont + item.teto_solar;
+            }
+            
+            
+            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @if (@ViewBag.cont > 0)
+            {
+                ViewBag.cont = ViewBag.cont - ViewBag.cont;
+            }
+            <br />
+        </th>
+
+    }
+</table>
+<legend>Qualidade</legend>
+<table>
+    @foreach (var item in Model)
+    {
+
+        <th>
+            <br />
+            @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+            @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+            @if (ViewBag.alternativas.historico_de_confiabilidade_da_fabricante == true)
+            {
+                @Html.Label("histÓrico de confiabilidade da fabricante: ") @Html.DisplayFor(modelItem => item.historico_fabricante)<br />
+                            ViewBag.cont = ViewBag.cont + item.historico_fabricante;
+            }
+            @if (ViewBag.alternativas.ano_do_projeto_do_automovel == true)
+            {
+                @Html.Label("Ano do projeto do automovel: ") @Html.DisplayFor(modelItem => item.ano_projeto)<br />
+                            ViewBag.cont = ViewBag.cont + item.ano_projeto;
+            }
+            @if (ViewBag.alternativas.rede_de_concessionarias == true)
+            {
+                @Html.Label("Rede de concessionarias: ") @Html.DisplayFor(modelItem => item.rede_concessionaria)<br />
+                            ViewBag.cont = ViewBag.cont + item.rede_concessionaria;
+            }
+            @if (ViewBag.alternativas.disponibilidade_de_pecas == true)
+            {
+                @Html.Label("Disponibilidade de peças: ") @Html.DisplayFor(modelItem => item.disponibilidade_de_pecas)<br />
+                            ViewBag.cont = ViewBag.cont + item.disponibilidade_de_pecas;
+            }
+            @if (ViewBag.alternativas.tempo_de_garantia == true)
+            {
+                @Html.Label("Tempo de garantia: ") @Html.DisplayFor(modelItem => item.tempo_de_garantia)<br />
+                ViewBag.cont = ViewBag.cont + item.tempo_de_garantia;
+            }
+            @if (ViewBag.alternativas.design == true)
+            {
+                @Html.Label("Design: ") @Html.DisplayFor(modelItem => item.design)<br />
+                ViewBag.cont = ViewBag.cont + item.design;
+            }            
+
+            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @if (@ViewBag.cont > 0)
+            {
+                ViewBag.cont = ViewBag.cont - ViewBag.cont;
+            }           
+        </th>
+
+    }
+</table>
+<legend>Segurança</legend>
+<table>
+    @foreach (var item in Model)
+    {
+
+        <th>
+            <br />
+            @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+            @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+            @if (ViewBag.alternativas.freio_com_ABS == true)
+            {
+                @Html.Label("Freio com ABS: ") @Html.DisplayFor(modelItem => item.freio_com_ABS)<br />
+                ViewBag.cont = ViewBag.cont + item.freio_com_ABS;
+            }
+            @if (ViewBag.alternativas.airbag == true)
+            {
+                @Html.Label("Airbag: ") @Html.DisplayFor(modelItem => item.airbag)<br />
+                ViewBag.cont = ViewBag.cont + item.airbag;
+            }
+            @if (ViewBag.alternativas.avaliacao_crash_test == true)
+            {
+                @Html.Label("Avaliação crash test: ") @Html.DisplayFor(modelItem => item.avaliacao_crash_test)<br />
+                ViewBag.cont = ViewBag.cont + item.avaliacao_crash_test;
+            }
+            @if (ViewBag.alternativas.controle_de_tracao == true)
+            {
+                @Html.Label("Controle de tração: ") @Html.DisplayFor(modelItem => item.controle_de_tracao)<br />
+                ViewBag.cont = ViewBag.cont + item.controle_de_tracao;
+            }
+            @if (ViewBag.alternativas.freio_com_EBD == true)
+            {
+                @Html.Label("Freio com EBD: ") @Html.DisplayFor(modelItem => item.freio_com_EBD)<br />
+                ViewBag.cont = ViewBag.cont + item.freio_com_EBD;
+            }
+            @if (ViewBag.alternativas.freio_com_BAS == true)
+            {
+                @Html.Label("Freio com BAS: ") @Html.DisplayFor(modelItem => item.freio_com_BAS)<br />
+                ViewBag.cont = ViewBag.cont + item.freio_com_BAS;
+            }
+            @if (ViewBag.alternativas.controle_de_estabilidade_ESP == true)
+            {
+                @Html.Label("Controle de estabilidade ESP: ") @Html.DisplayFor(modelItem => item.controle_de_estabilidade_ESP)<br />
+                ViewBag.cont = ViewBag.cont + item.controle_de_estabilidade_ESP;
+            }
+            @if (ViewBag.alternativas.blindagem == true)
+            {
+                @Html.Label("Blindagem: ") @Html.DisplayFor(modelItem => item.blindagem)<br />
+                ViewBag.cont = ViewBag.cont + item.blindagem;
+            }
+
+            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @if (@ViewBag.cont > 0)
+            {
+                ViewBag.cont = ViewBag.cont - ViewBag.cont;
+            }
+            
+        </th>
+
+
+    }
+</table>
+<legend>Valor</legend>
+<table>
+    @foreach (var item in Model)
+{
+
+    <th>
+        <br />
+        @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+        @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+        @if (ViewBag.alternativas.consumo == true)
+        {
+            @Html.Label("Consumo: ") @Html.DisplayFor(modelItem => item.consumo)<br />
+            ViewBag.cont = ViewBag.cont + item.consumo;
+        }
+        @if (ViewBag.alternativas.IPVA == true)
+        {
+            @Html.Label("IPVA: ") @Html.DisplayFor(modelItem => item.ipva)<br />
+            ViewBag.cont = ViewBag.cont + item.ipva;
+        }
+        @if (ViewBag.alternativas.valor_do_seguro == true)
+        {
+            @Html.Label("Valor do seguro: ") @Html.DisplayFor(modelItem => item.valor_do_seguro)<br />
+            ViewBag.cont = ViewBag.cont + item.valor_do_seguro;
+        }
+        @if (ViewBag.alternativas.custo_de_manutencao == true)
+        {
+            @Html.Label("Custo de manutencao: ") @Html.DisplayFor(modelItem => item.custo_de_manutencao)<br />
+            ViewBag.cont = ViewBag.cont + item.custo_de_manutencao;
+        }
+        @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+        @if (@ViewBag.cont > 0)
+        {
+            ViewBag.cont = ViewBag.cont - ViewBag.cont;
+        }
+    </th>
+}
+</table>
+
+<legend>Marketing</legend>
+<table>
+    @foreach (var item in Model)
+    {
+
+        <th>
+            <br />
+            @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+            @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+            @if (ViewBag.alternativas.conquista == true)
+            {
+                @Html.Label("Conquista: ") @Html.DisplayFor(modelItem => item.conquista)<br />
+                ViewBag.cont = ViewBag.cont + item.conquista;
+            }
+            @if (ViewBag.alternativas.exclusividade == true)
+            {
+                @Html.Label("Exclusividade: ") @Html.DisplayFor(modelItem => item.exclusividade)<br />
+                ViewBag.cont = ViewBag.cont + item.exclusividade;
+            }
+            @if (ViewBag.alternativas.boa_imagem == true)
+            {
+                @Html.Label("Boa imagem: ") @Html.DisplayFor(modelItem => item.boa_imagem)<br />
+                ViewBag.cont = ViewBag.cont + item.custo_de_manutencao;
+            }
+            @if (ViewBag.alternativas.aventureiro == true)
+            {
+                @Html.Label("Aventureiro: ") @Html.DisplayFor(modelItem => item.aventureiro)<br />
+                ViewBag.cont = ViewBag.cont + item.aventureiro;
+            }
+            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @if (@ViewBag.cont > 0)
+            {
+                ViewBag.cont = ViewBag.cont - ViewBag.cont;
+            }
+        </th>
+      
+
+    }
+</table>

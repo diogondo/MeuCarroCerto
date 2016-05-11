@@ -6,27 +6,26 @@
 @{
     Layout = null;
 }
-<h2>Usuários</h2>
-
+<legend>USUÁRIOS</legend>
 <p>
     @Html.ActionLink("Adicionar novo usuário", "Adicionar", null, new { @class = "btn btn-primary" })
 </p>
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.codigo)
+            @Html.DisplayName("Código")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nome)
+            @Html.DisplayName("Nome")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.login)
+            @Html.DisplayName("Login")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.senha)
+            @Html.DisplayName("Senha")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            @Html.DisplayName("E-mail")
         </th>
         <th></th>
     </tr>

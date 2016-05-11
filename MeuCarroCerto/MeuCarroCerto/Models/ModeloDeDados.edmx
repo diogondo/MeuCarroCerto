@@ -27,7 +27,10 @@
           <Property Name="codigo" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="250" />
           <Property Name="codigo_marca" Type="int" Nullable="false" />
+          <Property Name="blindagem" Type="int" Nullable="false" />
+          <Property Name="banco_de_couro" Type="int" Nullable="false" />
           <Property Name="ano" Type="int" Nullable="false" />
+          <Property Name="avaliacao_crash_test" Type="int" Nullable="false" />
           <Property Name="codigo_tipo_carroceria" Type="int" Nullable="false" />
           <Property Name="valor" Type="int" Nullable="false" />
           <Property Name="qtd_ocupantes" Type="int" Nullable="false" />
@@ -36,15 +39,29 @@
           <Property Name="direcao_hidraulica" Type="int" Nullable="false" />
           <Property Name="sensor_de_estacionamento" Type="int" Nullable="false" />
           <Property Name="alarme" Type="int" Nullable="false" />
+          <Property Name="controle_de_tracao" Type="int" Nullable="false" />
+          <Property Name="freio_com_EBD" Type="int" Nullable="false" />
+          <Property Name="freio_com_BAS" Type="int" Nullable="false" />
+          <Property Name="ipva" Type="int" Nullable="false" />
+          <Property Name="valor_do_seguro" Type="int" Nullable="false" />
+          <Property Name="custo_de_manutencao" Type="int" Nullable="false" />
+          <Property Name="conquista" Type="int" Nullable="false" />
+          <Property Name="exclusividade" Type="int" Nullable="false" />
+          <Property Name="boa_imagem" Type="int" Nullable="false" />
+          <Property Name="aventureiro" Type="int" Nullable="false" />
           <Property Name="cambio_automatico" Type="int" Nullable="false" />
           <Property Name="desempenho_zero_a_cem" Type="int" Nullable="false" />
           <Property Name="central_multimidia" Type="int" Nullable="false" />
           <Property Name="entrada_usb" Type="int" Nullable="false" />
           <Property Name="camera_de_re" Type="int" Nullable="false" />
+          <Property Name="controle_de_estabilidade_ESP" Type="int" Nullable="false" />
           <Property Name="farol_neblina" Type="int" Nullable="false" />
+          <Property Name="freio_com_ABS" Type="int" Nullable="false" />
+          <Property Name="consumo" Type="int" Nullable="false" />
           <Property Name="piloto_automatico" Type="int" Nullable="false" />
           <Property Name="roda_liga" Type="int" Nullable="false" />
           <Property Name="teto_solar" Type="int" Nullable="false" />
+          <Property Name="airbag" Type="int" Nullable="false" />
           <Property Name="historico_fabricante" Type="varchar" MaxLength="250" />
           <Property Name="ano_projeto" Type="int" Nullable="false" />
           <Property Name="rede_concessionaria" Type="varchar" MaxLength="250" />
@@ -65,6 +82,15 @@
           </Key>
           <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="t_parametros">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="peso" Type="varchar" MaxLength="80" />
+          <Property Name="desc" Type="varchar" MaxLength="80" />
+          <Property Name="tipo" Type="varchar" MaxLength="80" />
         </EntityType>
         <EntityType Name="t_usuarios">
           <Key>
@@ -106,6 +132,7 @@
           <EntitySet Name="t_carros" EntityType="Self.t_carros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_criterios" EntityType="Self.t_criterios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_marcas" EntityType="Self.t_marcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_parametros" EntityType="Self.t_parametros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_usuarios" EntityType="Self.t_usuarios" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_t_carrocerias_t_carros" Association="Self.FK_t_carrocerias_t_carros">
             <End Role="t_carrocerias" EntitySet="t_carrocerias" />
@@ -153,6 +180,7 @@
             <End Role="t_marcas" EntitySet="t_marcas" />
             <End Role="t_carros" EntitySet="t_carros" />
           </AssociationSet>
+          <EntitySet Name="t_parametros" EntityType="MeuCarroCertoDBModel.t_parametros" />
           </EntityContainer>
         <EntityType Name="t_carrocerias">
           <Key>
@@ -202,7 +230,7 @@
           <Property Name="piloto_automatico" Type="Int32" Nullable="false" />
           <Property Name="roda_liga" Type="Int32" Nullable="false" />
           <Property Name="teto_solar" Type="Int32" Nullable="false" />
-          <Property Name="historico_fabricante" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="historico_fabricante" Type="String" Unicode="false" FixedLength="false" MaxLength="250" />
           <Property Name="ano_projeto" Type="Int32" Nullable="false" />
           <Property Name="rede_concessionaria" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="disponibilidade_de_pecas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
@@ -210,6 +238,23 @@
           <Property Name="design" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="t_carrocerias" Relationship="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros" FromRole="t_carros" ToRole="t_carrocerias" />
           <NavigationProperty Name="t_marcas" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros" FromRole="t_carros" ToRole="t_marcas" />
+          <Property Name="blindagem" Type="Int32" Nullable="false" />
+          <Property Name="banco_de_couro" Type="Int32" Nullable="false" />
+          <Property Name="avaliacao_crash_test" Type="Int32" Nullable="false" />
+          <Property Name="controle_de_tracao" Type="Int32" Nullable="false" />
+          <Property Name="freio_com_EBD" Type="Int32" Nullable="false" />
+          <Property Name="freio_com_BAS" Type="Int32" Nullable="false" />
+          <Property Name="ipva" Type="Int32" Nullable="false" />
+          <Property Name="valor_do_seguro" Type="Int32" Nullable="false" />
+          <Property Name="custo_de_manutencao" Type="Int32" Nullable="false" />
+          <Property Name="conquista" Type="Int32" Nullable="false" />
+          <Property Name="exclusividade" Type="Int32" Nullable="false" />
+          <Property Name="boa_imagem" Type="Int32" Nullable="false" />
+          <Property Name="aventureiro" Type="Int32" Nullable="false" />
+          <Property Name="controle_de_estabilidade_ESP" Type="Int32" Nullable="false" />
+          <Property Name="freio_com_ABS" Type="Int32" Nullable="false" />
+          <Property Name="consumo" Type="Int32" Nullable="false" />
+          <Property Name="airbag" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_t_carrocerias_t_carros">
           <End Type="MeuCarroCertoDBModel.t_carrocerias" Role="t_carrocerias" Multiplicity="1" />
@@ -235,6 +280,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="t_parametros">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="peso" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="desc" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -288,6 +342,23 @@
           <EntitySetMapping Name="t_carros">
             <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_carros">
               <MappingFragment StoreEntitySet="t_carros">
+                <ScalarProperty Name="airbag" ColumnName="airbag" />
+                <ScalarProperty Name="consumo" ColumnName="consumo" />
+                <ScalarProperty Name="freio_com_ABS" ColumnName="freio_com_ABS" />
+                <ScalarProperty Name="controle_de_estabilidade_ESP" ColumnName="controle_de_estabilidade_ESP" />
+                <ScalarProperty Name="aventureiro" ColumnName="aventureiro" />
+                <ScalarProperty Name="boa_imagem" ColumnName="boa_imagem" />
+                <ScalarProperty Name="exclusividade" ColumnName="exclusividade" />
+                <ScalarProperty Name="conquista" ColumnName="conquista" />
+                <ScalarProperty Name="custo_de_manutencao" ColumnName="custo_de_manutencao" />
+                <ScalarProperty Name="valor_do_seguro" ColumnName="valor_do_seguro" />
+                <ScalarProperty Name="ipva" ColumnName="ipva" />
+                <ScalarProperty Name="freio_com_BAS" ColumnName="freio_com_BAS" />
+                <ScalarProperty Name="freio_com_EBD" ColumnName="freio_com_EBD" />
+                <ScalarProperty Name="controle_de_tracao" ColumnName="controle_de_tracao" />
+                <ScalarProperty Name="avaliacao_crash_test" ColumnName="avaliacao_crash_test" />
+                <ScalarProperty Name="banco_de_couro" ColumnName="banco_de_couro" />
+                <ScalarProperty Name="blindagem" ColumnName="blindagem" />
                 <ScalarProperty Name="design" ColumnName="design" />
                 <ScalarProperty Name="tempo_de_garantia" ColumnName="tempo_de_garantia" />
                 <ScalarProperty Name="disponibilidade_de_pecas" ColumnName="disponibilidade_de_pecas" />
@@ -315,6 +386,16 @@
                 <ScalarProperty Name="codigo_marca" ColumnName="codigo_marca" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_parametros">
+            <EntityTypeMapping TypeName="MeuCarroCertoDBModel.t_parametros">
+              <MappingFragment StoreEntitySet="t_parametros">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

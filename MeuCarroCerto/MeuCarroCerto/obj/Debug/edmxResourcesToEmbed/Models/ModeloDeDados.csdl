@@ -33,6 +33,7 @@
       <End Role="t_marcas" EntitySet="t_marcas" />
       <End Role="t_carros" EntitySet="t_carros" />
     </AssociationSet>
+    <EntitySet Name="t_parametros" EntityType="MeuCarroCertoDBModel.t_parametros" />
   </EntityContainer>
   <EntityType Name="t_carrocerias">
     <Key>
@@ -90,6 +91,23 @@
     <Property Name="design" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="t_carrocerias" Relationship="MeuCarroCertoDBModel.FK_t_carrocerias_t_carros" FromRole="t_carros" ToRole="t_carrocerias" />
     <NavigationProperty Name="t_marcas" Relationship="MeuCarroCertoDBModel.FK_t_marcas_t_carros" FromRole="t_carros" ToRole="t_marcas" />
+    <Property Name="blindagem" Type="Int32" Nullable="false" />
+    <Property Name="banco_de_couro" Type="Int32" Nullable="false" />
+    <Property Name="avaliacao_crash_test" Type="Int32" Nullable="false" />
+    <Property Name="controle_de_tracao" Type="Int32" Nullable="false" />
+    <Property Name="freio_com_EBD" Type="Int32" Nullable="false" />
+    <Property Name="freio_com_BAS" Type="Int32" Nullable="false" />
+    <Property Name="ipva" Type="Int32" Nullable="false" />
+    <Property Name="valor_do_seguro" Type="Int32" Nullable="false" />
+    <Property Name="custo_de_manutencao" Type="Int32" Nullable="false" />
+    <Property Name="conquista" Type="Int32" Nullable="false" />
+    <Property Name="exclusividade" Type="Int32" Nullable="false" />
+    <Property Name="boa_imagem" Type="Int32" Nullable="false" />
+    <Property Name="aventureiro" Type="Int32" Nullable="false" />
+    <Property Name="controle_de_estabilidade_ESP" Type="Int32" Nullable="false" />
+    <Property Name="freio_com_ABS" Type="Int32" Nullable="false" />
+    <Property Name="consumo" Type="Int32" Nullable="false" />
+    <Property Name="airbag" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK_t_carrocerias_t_carros">
     <End Type="MeuCarroCertoDBModel.t_carrocerias" Role="t_carrocerias" Multiplicity="1" />
@@ -115,4 +133,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="t_parametros">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="peso" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="desc" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

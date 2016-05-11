@@ -72,6 +72,40 @@ public partial class t_carros
 
     public string design { get; set; }
 
+    public int blindagem { get; set; }
+
+    public int banco_de_couro { get; set; }
+
+    public int avaliacao_crash_test { get; set; }
+
+    public int controle_de_tracao { get; set; }
+
+    public int freio_com_EBD { get; set; }
+
+    public int freio_com_BAS { get; set; }
+
+    public int ipva { get; set; }
+
+    public int valor_do_seguro { get; set; }
+
+    public int custo_de_manutencao { get; set; }
+
+    public int conquista { get; set; }
+
+    public int exclusividade { get; set; }
+
+    public int boa_imagem { get; set; }
+
+    public int aventureiro { get; set; }
+
+    public int controle_de_estabilidade_ESP { get; set; }
+
+    public int freio_com_ABS { get; set; }
+
+    public int consumo { get; set; }
+
+    public int airbag { get; set; }
+
 
 
     public virtual t_carrocerias t_carrocerias { get; set; }

@@ -1,0 +1,190 @@
+﻿@model MeuCarroCerto.Models.Alternativas
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Pondere seus critérios</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <table>
+            <td align="left" valign=top>
+                <legend>Necessidades</legend>
+
+                <div class="editor-field">
+
+                    @Html.CheckBoxFor(model => model.trio_eletrico)
+                    @Html.Label("Trio Elétrico")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.ar_condicionado)
+                    @Html.Label("Ar condicionado")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.direcao_hidrulica)
+                    @Html.Label("Direcão Hidráulica")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.banco_de_couro)
+                    @Html.Label("Banco de Couro")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.sensor_de_estacionamento)
+                    @Html.Label("Sensor de estacionamento")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.alarme)
+                    @Html.Label("Alarme")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.cambio_automatico)
+                    @Html.Label("Cambio automático")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.desempenho_0_a_100)
+                    @Html.Label("Desempenho")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.central_multimidia)
+                    @Html.Label("Central multimídia")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.sistema_de_som_com_entrada_USB)
+                    @Html.Label("Sistema de som com entrada USB")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.camera_de_re)
+                    @Html.Label("Câmera de ré")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.farol_de_neblina)
+                    @Html.Label("Farol de neblina")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.piloto_automatico)
+                    @Html.Label("Piloto automático")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.rodas_de_liga)
+                    @Html.Label("Rodas de liga")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.teto_solar)
+                    @Html.Label("Teto solar")
+                </div>
+            </td>
+            <td align="left" valign=top>
+                <legend>Qualidade</legend>
+
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.historico_de_confiabilidade_da_fabricante)
+                    @Html.Label("Histórico de confiabilidade da fabricante")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.ano_do_projeto_do_automovel)
+                    @Html.Label("Ano do projeto do automóvel")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.rede_de_concessionarias)
+                    @Html.Label("Rede de concessionárias")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.disponibilidade_de_pecas)
+                    @Html.Label("Disponibilidade de peças")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.tempo_de_garantia)
+                    @Html.Label("Tempo de garantia")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.design)
+                    @Html.Label("Design")
+                </div>
+            </td>
+            <td align="left" valign=top>
+                <legend>Segurança</legend>
+
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.freio_com_ABS)
+                    @Html.Label("Freio com ABS")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.airbag)
+                    @Html.Label("Airbag")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.avaliacao_crash_test)
+                    @Html.Label("Avaliação crash test")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.controle_de_tracao)
+                    @Html.Label("Controle de tração")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.freio_com_EBD)
+                    @Html.Label("Freio com EBD")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.freio_com_BAS)
+                    @Html.Label("Freio com BAS")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.controle_de_estabilidade_ESP)
+                    @Html.Label("Controle de estabilidade ESP")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.blindagem)
+                    @Html.Label("Blindagem")
+                </div>
+            </td>
+            <td align="left" valign=top>
+                <legend>Valor</legend>
+
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.consumo)
+                    @Html.Label("Consumo")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.IPVA)
+                    @Html.Label("IPVA")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.valor_do_seguro)
+                    @Html.Label("Valor do seguro")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.custo_de_manutencao)
+                    @Html.Label("Custo de manutenção")
+                </div>
+            </td>
+            <td align="left" valign=top>
+                <legend>Marketing</legend>
+
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.conquista)
+                    @Html.Label("Conquista")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.exclusividade)
+                    @Html.Label("Exclusividade")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.boa_imagem)
+                    @Html.Label("Boa imagem")
+                </div>
+                <div class="editor-field">
+                    @Html.CheckBoxFor(model => model.aventureiro)
+                    @Html.Label("Aventureiro")
+                </div>
+            </td>
+
+        </table>
+
+        <p>
+            <input type="submit" value="Continuar" />
+        </p>
+    </fieldset>
+}
