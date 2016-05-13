@@ -136,6 +136,7 @@
     <Compile Include="Models\Alternativas.cs" />
     <Compile Include="Models\Auxiliar.cs" />
     <Compile Include="Models\BancoSession.cs" />
+    <Compile Include="Models\CarrosXAlternativas.cs" />
     <Compile Include="Models\CriteriosPessoa.cs" />
     <Compile Include="Models\Filtros.cs" />
     <Compile Include="Models\MarcasMetadado.cs" />

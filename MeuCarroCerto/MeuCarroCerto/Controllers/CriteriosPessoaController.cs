@@ -28,12 +28,13 @@ namespace MeuCarroCerto.Controllers
             double autovero = matrizCriteios.autoVetor();
             double necessidade = matrizCriteios.vNormaNecessidade();
             double qualidade = matrizCriteios.vNormaQualidade();
-            double seguranca = matrizCriteios.vNormaSeguranca();
+            double seguranca = matrizCriteios.vNormaSeguranca() ;
             double valor = matrizCriteios.vNormaValor();
             double marketing = matrizCriteios.vNormaMarketing();
 
             BancoSession bd = BancoSession.CriarConexaoBancoSession();
             bd.ListaCriteriosPessoa.Add(criteriosPessoa);
+            bd.ListamatrizCriteios.Add(matrizCriteios);
 
             ViewBag.criterio = new SelectList(db.t_parametros.Where(i => i.tipo == "criterio"), "id", "desc");
 

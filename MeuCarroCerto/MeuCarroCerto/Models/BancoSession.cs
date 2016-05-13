@@ -9,11 +9,12 @@ namespace MeuCarroCerto.Models
     {
         public IList<Filtros> ListaFiltros { get; set; }
         public IList<CriteriosPessoa> ListaCriteriosPessoa { get; set; }
-
+        public IList<MatrizCriterios> ListamatrizCriteios { get; set; }
         private BancoSession()
         {
             this.ListaFiltros = new List<Filtros>();
             this.ListaCriteriosPessoa = new List<CriteriosPessoa>();
+            this.ListamatrizCriteios = new List<MatrizCriterios>();
         }
 
 

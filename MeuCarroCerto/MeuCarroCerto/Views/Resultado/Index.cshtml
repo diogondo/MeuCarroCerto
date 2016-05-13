@@ -6,13 +6,15 @@
 
 
 <legend>Necessidades</legend>
-<table>
+<table cellspacing="10" cellpadding="20">
+    @{var contador = 1;}
     @foreach (var item in Model)
     {
 
-        
+
         <th>
-            <br />
+
+            @Html.Label("Carro certo: " + @contador)<br />
             @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
             @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
             @if (ViewBag.alternativas.ar_condicionado == true)
@@ -60,7 +62,7 @@
                 @Html.Label("Central multimidia: ") @Html.DisplayFor(modelItem => item.central_multimidia)<br />
                 ViewBag.cont = ViewBag.cont + item.central_multimidia;
             }
-            
+
             @if (ViewBag.alternativas.sistema_de_som_com_entrada_USB == true)
             {
                 @Html.Label("Sistema de som com entrada USB: ") @Html.DisplayFor(modelItem => item.entrada_usb)<br />
@@ -72,13 +74,13 @@
                 @Html.Label("Camera de ré ") @Html.DisplayFor(modelItem => item.camera_de_re)<br />
                 ViewBag.cont = ViewBag.cont + item.camera_de_re;
             }
-            
+
             @if (ViewBag.alternativas.farol_de_neblina == true)
             {
                 @Html.Label("Faról de neblina ") @Html.DisplayFor(modelItem => item.farol_neblina)<br />
                 ViewBag.cont = ViewBag.cont + item.farol_neblina;
             }
-            
+
             @if (ViewBag.alternativas.piloto_automatico == true)
             {
                 @Html.Label("Piloto automático: ") @Html.DisplayFor(modelItem => item.piloto_automatico)<br />
@@ -90,80 +92,79 @@
                 @Html.Label("Rodas de liga: ") @Html.DisplayFor(modelItem => item.roda_liga)<br />
                 ViewBag.cont = ViewBag.cont + item.roda_liga;
             }
-            
+
             @if (ViewBag.alternativas.teto_solar == true)
             {
                 @Html.Label("Teto solar: ") @Html.DisplayFor(modelItem => item.teto_solar)<br />
                 ViewBag.cont = ViewBag.cont + item.teto_solar;
             }
-            
-            
-            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+
+
+            @Html.Label("Total das alternativas: " + (int)ViewBag.cont)
             @if (@ViewBag.cont > 0)
             {
                 ViewBag.cont = ViewBag.cont - ViewBag.cont;
+                contador = contador + 1;
             }
-            <br />
         </th>
 
     }
 </table>
 <legend>Qualidade</legend>
-<table>
+<table cellspacing="10" cellpadding="20">
     @foreach (var item in Model)
     {
 
         <th>
-            <br />
             @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
             @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
             @if (ViewBag.alternativas.historico_de_confiabilidade_da_fabricante == true)
             {
                 @Html.Label("histÓrico de confiabilidade da fabricante: ") @Html.DisplayFor(modelItem => item.historico_fabricante)<br />
-                            ViewBag.cont = ViewBag.cont + item.historico_fabricante;
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.historico_fabricante);
             }
             @if (ViewBag.alternativas.ano_do_projeto_do_automovel == true)
             {
                 @Html.Label("Ano do projeto do automovel: ") @Html.DisplayFor(modelItem => item.ano_projeto)<br />
-                            ViewBag.cont = ViewBag.cont + item.ano_projeto;
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.ano_projeto);
             }
             @if (ViewBag.alternativas.rede_de_concessionarias == true)
             {
                 @Html.Label("Rede de concessionarias: ") @Html.DisplayFor(modelItem => item.rede_concessionaria)<br />
-                            ViewBag.cont = ViewBag.cont + item.rede_concessionaria;
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.rede_concessionaria);
             }
             @if (ViewBag.alternativas.disponibilidade_de_pecas == true)
             {
                 @Html.Label("Disponibilidade de peças: ") @Html.DisplayFor(modelItem => item.disponibilidade_de_pecas)<br />
-                            ViewBag.cont = ViewBag.cont + item.disponibilidade_de_pecas;
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.disponibilidade_de_pecas);
             }
             @if (ViewBag.alternativas.tempo_de_garantia == true)
             {
                 @Html.Label("Tempo de garantia: ") @Html.DisplayFor(modelItem => item.tempo_de_garantia)<br />
-                ViewBag.cont = ViewBag.cont + item.tempo_de_garantia;
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.tempo_de_garantia);
             }
             @if (ViewBag.alternativas.design == true)
             {
                 @Html.Label("Design: ") @Html.DisplayFor(modelItem => item.design)<br />
-                ViewBag.cont = ViewBag.cont + item.design;
-            }            
+                ViewBag.cont = ViewBag.cont + Convert.ToInt32(item.design);
+            }
 
-            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @Html.Label("Total das alternativas: " + (int)ViewBag.cont)
             @if (@ViewBag.cont > 0)
             {
-                ViewBag.cont = ViewBag.cont - ViewBag.cont;
-            }           
+                ViewBag.cont = (int)ViewBag.cont - (int)ViewBag.cont;
+            }
         </th>
 
     }
 </table>
+
 <legend>Segurança</legend>
-<table>
+<table cellspacing="10" cellpadding="20">
     @foreach (var item in Model)
     {
 
         <th>
-            <br />
             @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
             @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
             @if (ViewBag.alternativas.freio_com_ABS == true)
@@ -207,57 +208,56 @@
                 ViewBag.cont = ViewBag.cont + item.blindagem;
             }
 
-            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @Html.Label("Total das alternativas: " + (int)ViewBag.cont)
             @if (@ViewBag.cont > 0)
             {
                 ViewBag.cont = ViewBag.cont - ViewBag.cont;
             }
-            
+
         </th>
 
 
     }
 </table>
 <legend>Valor</legend>
-<table>
+<table cellspacing="10" cellpadding="20">
     @foreach (var item in Model)
-{
+    {
 
-    <th>
-        <br />
-        @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
-        @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
-        @if (ViewBag.alternativas.consumo == true)
-        {
-            @Html.Label("Consumo: ") @Html.DisplayFor(modelItem => item.consumo)<br />
-            ViewBag.cont = ViewBag.cont + item.consumo;
-        }
-        @if (ViewBag.alternativas.IPVA == true)
-        {
-            @Html.Label("IPVA: ") @Html.DisplayFor(modelItem => item.ipva)<br />
-            ViewBag.cont = ViewBag.cont + item.ipva;
-        }
-        @if (ViewBag.alternativas.valor_do_seguro == true)
-        {
-            @Html.Label("Valor do seguro: ") @Html.DisplayFor(modelItem => item.valor_do_seguro)<br />
-            ViewBag.cont = ViewBag.cont + item.valor_do_seguro;
-        }
-        @if (ViewBag.alternativas.custo_de_manutencao == true)
-        {
-            @Html.Label("Custo de manutencao: ") @Html.DisplayFor(modelItem => item.custo_de_manutencao)<br />
-            ViewBag.cont = ViewBag.cont + item.custo_de_manutencao;
-        }
-        @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
-        @if (@ViewBag.cont > 0)
-        {
-            ViewBag.cont = ViewBag.cont - ViewBag.cont;
-        }
-    </th>
-}
+        <th>
+            @Html.Label("Carro: ") @Html.DisplayFor(modelItem => item.nome)<br />
+            @Html.Label("Marca: ") @Html.DisplayFor(modelItem => item.codigo_marca)<br />
+            @if (ViewBag.alternativas.consumo == true)
+            {
+                @Html.Label("Consumo: ") @Html.DisplayFor(modelItem => item.consumo)<br />
+                ViewBag.cont = ViewBag.cont + item.consumo;
+            }
+            @if (ViewBag.alternativas.IPVA == true)
+            {
+                @Html.Label("IPVA: ") @Html.DisplayFor(modelItem => item.ipva)<br />
+                ViewBag.cont = ViewBag.cont + item.ipva;
+            }
+            @if (ViewBag.alternativas.valor_do_seguro == true)
+            {
+                @Html.Label("Valor do seguro: ") @Html.DisplayFor(modelItem => item.valor_do_seguro)<br />
+                ViewBag.cont = ViewBag.cont + item.valor_do_seguro;
+            }
+            @if (ViewBag.alternativas.custo_de_manutencao == true)
+            {
+                @Html.Label("Custo de manutencao: ") @Html.DisplayFor(modelItem => item.custo_de_manutencao)<br />
+                ViewBag.cont = ViewBag.cont + item.custo_de_manutencao;
+            }
+            @Html.Label("Total das alternativas: " + (int)ViewBag.cont)
+            @if (@ViewBag.cont > 0)
+            {
+                ViewBag.cont = ViewBag.cont - ViewBag.cont;
+            }
+        </th>
+    }
 </table>
 
 <legend>Marketing</legend>
-<table>
+<table cellspacing="10" cellpadding="20">
     @foreach (var item in Model)
     {
 
@@ -285,13 +285,13 @@
                 @Html.Label("Aventureiro: ") @Html.DisplayFor(modelItem => item.aventureiro)<br />
                 ViewBag.cont = ViewBag.cont + item.aventureiro;
             }
-            @Html.Label("Soma alternativas") @Html.TextBox("teste", (int)ViewBag.cont)
+            @Html.Label("Total das alternativas: " + (int)ViewBag.cont)
             @if (@ViewBag.cont > 0)
             {
                 ViewBag.cont = ViewBag.cont - ViewBag.cont;
             }
         </th>
-      
+
 
     }
 </table>
