@@ -15,10 +15,15 @@ namespace MeuCarroCerto.Controllers
         
         public ActionResult Index()
         {
-            ViewBag.qtd = new SelectList(db.t_parametros.Where(i => i.tipo == "ocupantes"), "desc", "desc");
+            //ViewBag.qtd = new SelectList(db.t_parametros.Where(i => i.tipo == "ocupantes"), "desc", "desc");
+            //ViewBag.carroceria = new SelectList(db.t_carrocerias, "codigo", "nome");
+            //ViewBag.valor = new SelectList(db.t_parametros.Where(i => i.tipo == "preco"), "desc", "desc");
+            //ViewBag.ano = new SelectList(db.t_parametros.Where(i => i.tipo == "ano"), "desc", "desc");
+
+            ViewBag.qtd = new SelectList(db.t_carros.SqlQuery("select * from t_carros").GroupBy(x => x.qtd_ocupantes).Select(y => y.First()), "qtd_ocupantes", "qtd_ocupantes");
             ViewBag.carroceria = new SelectList(db.t_carrocerias, "codigo", "nome");
-            ViewBag.valor = new SelectList(db.t_parametros.Where(i => i.tipo == "preco"), "desc", "desc");
-            ViewBag.ano = new SelectList(db.t_parametros.Where(i => i.tipo == "ano"), "desc", "desc");
+            ViewBag.valor = new SelectList(db.t_parametros.Where(i => i.tipo == "preco"), "desc", "peso");
+            ViewBag.ano = new SelectList(db.t_carros.SqlQuery("select * from t_carros").GroupBy(x => x.ano).Select(y => y.First()).OrderBy(x => x.ano), "ano", "ano");
             return View();
         }
         [HttpPost]

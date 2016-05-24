@@ -254,6 +254,7 @@
     <Content Include="Views\CriteriosPessoa\Index.cshtml" />
     <Content Include="Views\Alternativas\Index.cshtml" />
     <Content Include="Views\Resultado\Index.cshtml" />
+    <Content Include="Views\Resultado\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -17,6 +17,7 @@ using System;
     
 public partial class t_carros
 {
+    private EntidadesMeuCarroCertoDB db = new EntidadesMeuCarroCertoDB();
 
     public long codigo { get; set; }
 
@@ -106,11 +107,21 @@ public partial class t_carros
 
     public int airbag { get; set; }
 
-
+    public string marca_comp { get; set; }
 
     public virtual t_carrocerias t_carrocerias { get; set; }
 
     public virtual t_marcas t_marcas { get; set; }
+
+    public void marca()
+    {
+        var marcasMetadado = db.t_marcas.SqlQuery("select nome from t_marcas where codigo=" + codigo_marca + ";");
+         foreach (var item in marcasMetadado)
+            {
+                marca_comp = item.nome;
+            }
+        
+    }
 
 }
 

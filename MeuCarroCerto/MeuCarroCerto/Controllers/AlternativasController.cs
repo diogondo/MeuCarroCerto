@@ -18,13 +18,11 @@ namespace MeuCarroCerto.Controllers
         [HttpPost]
         public ActionResult Index(Alternativas alternativas)
         {
-            if (alternativas.trio_eletrico = true) {
-                alternativas.valor_do_seguro = true;
-            };
+           
 
             
 
-            return RedirectToAction("Index", "Resultado",alternativas);
+            return RedirectToAction("Index2", "Resultado",alternativas);
         }
 
 

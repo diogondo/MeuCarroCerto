@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MeuCarroCerto.Models.t_carros>
+@{
+    ViewBag.Title = "Index";
+}
+
+<legend>Melhores carros</legend>
+<table border=1>
+    <tr>
+        @foreach (var item in Model)
+{
+    <td width="150" align="center">
+        <b>@Html.DisplayFor(modelItem => item.marca_comp)</b><br />
+        <b>@Html.DisplayFor(modelItem => item.nome)</b>
+    </td>
+}
+    </tr>
+</table>
