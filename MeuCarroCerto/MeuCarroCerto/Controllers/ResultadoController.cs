@@ -440,7 +440,6 @@ namespace MeuCarroCerto.Controllers
                 {
                     break;
                 }
-                
                 carros.Add(db.t_carros.Find(item.idCarro));
 
                 var testes = db.t_marcas.SqlQuery("select * from t_marcas where codigo=" + carros[contaCarros].codigo_marca + ";" );
@@ -448,9 +447,11 @@ namespace MeuCarroCerto.Controllers
             foreach (var itens in testes)
             {
                 carros[contaCarros].marca_comp = itens.nome;
+                
             }
                 contaCarros = contaCarros + 1;
             }
+            bd.LimparBanco();
             return View(carros);
         }
     }

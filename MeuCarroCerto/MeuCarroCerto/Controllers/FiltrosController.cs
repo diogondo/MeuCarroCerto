@@ -45,6 +45,7 @@ namespace MeuCarroCerto.Controllers
             }
 
             BancoSession bd = BancoSession.CriarConexaoBancoSession();
+           
             bd.ListaFiltros.Add(filtro);
             
             return RedirectToAction("Index", "CriteriosPessoa");
